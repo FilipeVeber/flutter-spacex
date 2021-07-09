@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_spacex/app/app_widget.dart';
-import 'package:flutter_spacex/main.dart';
+import 'package:flutter_spacex/app/modules/home/home_module.dart';
 
 class AppModule extends MainModule {
   @override
@@ -11,8 +11,6 @@ class AppModule extends MainModule {
   Widget get bootstrap => AppWidget();
 
   @override
-  List<ModularRouter> get routers => [
-        new ModularRouter("/",
-            child: (_, __) => MyHomePage(title: 'Flutter Demo Home Page'))
-      ];
+  List<ModularRouter> get routers =>
+      [new ModularRouter("/", module: HomeModule())];
 }

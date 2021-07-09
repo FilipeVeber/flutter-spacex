@@ -6,9 +6,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Space X',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData.dark(),
       initialRoute: "/",
       navigatorKey: Modular.navigatorKey,
       onGenerateRoute: Modular.generateRoute,
