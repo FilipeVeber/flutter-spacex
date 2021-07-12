@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_spacex/app/modules/home/dtos/menu_tile_dto.dart';
 import 'package:flutter_spacex/app/modules/home/widgets/menu_tile_widget.dart';
 
 class MenuGridViewWidget extends StatelessWidget {
   List<MenuItemDto> _menuItems = [
-    new MenuItemDto("Module 1", Colors.green),
+    new MenuItemDto("Rockets", Colors.green, () {
+      Modular.to.pushNamed("/rockets");
+    }),
   ];
 
   @override

@@ -12,8 +12,11 @@ class MenuTileWidget extends StatelessWidget {
     return Card(
       shape: _buildBorder(),
       color: this._menuItem.color[300],
-      child: Center(
-        child: _buildText(),
+      child: InkWell(
+        onTap: this._menuItem.onTap,
+        child: Center(
+          child: _buildText(),
+        ),
       ),
     );
   }
