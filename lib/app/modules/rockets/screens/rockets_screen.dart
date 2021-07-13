@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_spacex/app/base_widgets/base_loading_widget.dart';
-import 'package:flutter_spacex/app/modules/rockets/states/rocket_state.dart';
+import 'package:flutter_spacex/app/modules/rockets/states/search_rockets_state.dart';
 import 'package:flutter_spacex/app/modules/rockets/stores/rocket_store.dart';
 import 'package:flutter_spacex/app/modules/rockets/widgets/rocket_list_widget.dart';
 import 'package:flutter_spacex/app/modules/rockets/widgets/search_rocket_error_widget.dart';
@@ -27,15 +27,15 @@ class RocketsScreen extends StatelessWidget {
       builder: (_) {
         var state = _store.searchRocketState;
 
-        if (state is SearchRocketErrorState) {
+        if (state is SearchRocketsErrorState) {
           return SearchRocketErrorWidget(state.error);
         }
 
-        if (state is SearchRocketLoadingState) {
+        if (state is SearchRocketsLoadingState) {
           return BaseLoadingWidget();
         }
 
-        if (state is SearchRocketSuccessState) {
+        if (state is SearchRocketsSuccessState) {
           return RocketListWidget(state.rockets);
         }
 

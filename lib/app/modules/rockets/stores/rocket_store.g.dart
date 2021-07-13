@@ -13,13 +13,13 @@ mixin _$RocketStore on _RocketStoreBase, Store {
       Atom(name: '_RocketStoreBase.searchRocketState');
 
   @override
-  SearchRocketState get searchRocketState {
+  SearchRocketsState get searchRocketState {
     _$searchRocketStateAtom.reportRead();
     return super.searchRocketState;
   }
 
   @override
-  set searchRocketState(SearchRocketState value) {
+  set searchRocketState(SearchRocketsState value) {
     _$searchRocketStateAtom.reportWrite(value, super.searchRocketState, () {
       super.searchRocketState = value;
     });
@@ -29,7 +29,7 @@ mixin _$RocketStore on _RocketStoreBase, Store {
       ActionController(name: '_RocketStoreBase');
 
   @override
-  dynamic updateRocketState(SearchRocketState state) {
+  dynamic updateRocketState(SearchRocketsState state) {
     final _$actionInfo = _$_RocketStoreBaseActionController.startAction(
         name: '_RocketStoreBase.updateRocketState');
     try {

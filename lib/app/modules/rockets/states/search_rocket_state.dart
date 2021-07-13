@@ -18,7 +18,7 @@ class SearchRocketErrorState implements SearchRocketState {
 }
 
 class SearchRocketSuccessState implements SearchRocketState {
-  final List<Rocket> rockets;
+  final Rocket rocket;
 
-  const SearchRocketSuccessState(this.rockets);
+  const SearchRocketSuccessState(this.rocket);
 }
